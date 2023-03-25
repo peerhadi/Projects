@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Changa+One&family=Nabla&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <style>
+      canvas{
+          margin-top: 5.4px;
+      }
+      hr{
+          margin-top: -0.5px;
+      }
+
+      
+      </style>
+    <canvas id="canvas1"></canvas>
+    <hr/>
+    <p id="score" style="position: absolute;
+                         top:-20px;
+                         bottom: 0;
+                         left: 94%;
+                         right: 0;
+                         font-size: 25px;
+                         color: white;
+                         -webkit-text-stroke:3px black;
+                         font-family:'Changa One',cursive;">0</p>
+    <p id="Game-over"
+       style="position: absolute;                                                                  
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              text-align:center;
+              display:none;
+              align-items: center;
+              justify-content: center;
+              font-size:60px;
+              font-family:'Changa One',cursive;
+              color: white;
+              -webkit-text-stroke:3px black;                                                           
+              ">GAME OVER</p>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="
+              width: 35px;
+              position: absolute;                                                                  
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              text-align:center;
+              margin: 4.5% auto;
+              "
+         ><<!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="Player.js"></script>
+    <script type="module" src="Obstacle.js"></script>
+  </body>
+</html>
