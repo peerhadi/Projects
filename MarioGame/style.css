@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    background-color:black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#button{
+    padding: 30px;
+    width: 100px;
+    border-radius: 50px;
+    background:linear-gradient(to bottom,lightgrey,dodgerblue,darkgreen);
+    border: none;
+    color:white;
+    font-size: 14px;
+    text-align: center;
+}

@@ -1,0 +1,76 @@
+<canvas id="gc" width="640" height="480"></canvas>
+<script>
+  let c = document.getElementById("gc")
+  let cc = c.getContext("2d")
+  let p1y = 40;
+  let p2y = 40;
+  let pt = 10;
+  let ph = 100;
+  let bx = 50;
+  let by = 50;
+  let bd = 5;
+  let xv = 10;
+  let yv = 10;
+  let score1 = 0;
+  let score2 = 0;
+  let ais = 2;
+  window.onload = function(){
+      setInterval(update,1000/30)
+  }
+  function update(){
+      bx += xv;
+      by += yv;
+      if(by < 0 && yv < 0){
+          yv = -yv
+      }
+      if(by > c.height && yv > 0){
+          yv = -yv
+      }
+      if(bx < 0){
+          if(by > p1y && by <= p1y + ph){
+              xv = -xv;
+              dy = by - (p1y + ph/2);
+              yv = dy * 0.3;  
+          }else{
+              score2++
+              xv = -xv
+          }
+      }
+      if(bx > c.width){
+          if(by > p2y && by <= p2y + ph){
+              xv = -xv;
+              dy = by- (p2y + ph/2);
+              yv = dy * 0.3;  
+          }else{
+              score1++
+              xv = -xv
+          }
+      }
+      cc.fillStyle = "black";
+      cc.fillRect(0,0,c.width,c.height)
+      cc.fillStyle = "white ";
+      cc.fillRect(0,p1y,pt,ph)
+      cc.fillRect(c.width - pt,p2y,pt,ph)
+      cc.fillRect(bx - bd/2,by,bd,bd)
+      cc.font = "30px Verdana";
+      cc.fillText(score1, 100, 100)
+      cc.fillText(score2, c.width - 100, 100)
+      console.log(p1y)
+  }
+      window.addEventListener("keydown", (e) => {
+          switch(e.key){
+          case "w":
+              p1y -= 25
+              break;
+          case "s":
+              p1y += 25
+              break;
+          case "ArrowUp":
+              p2y -= 25
+              break;
+          case "ArrowDown":
+              p2y += 25
+              break;
+          }
+      })
+</script>
